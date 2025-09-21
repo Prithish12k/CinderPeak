@@ -157,6 +157,17 @@ public:
     return status;
   }
 
+  PeakStatus clearVertices() {
+    LOG_INFO("Called peakStore:clearVertices");
+    auto status = ctx->active_storage->impl_clearVertices();
+    if (status.isOK()) {
+      ctx->metadata->num_vertices = 0;
+      ctx->metadata->num_edges = 0;
+    }
+
+    return status;
+  }
+
   // Helper method to call impl_clearEdges from AdjacencyList
   PeakStatus clearEdges() {
     LOG_INFO("Called peakStore:clearEdges");

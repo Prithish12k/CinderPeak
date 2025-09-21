@@ -72,7 +72,17 @@ int main() {
   else
     std::cout << "updateEdge failed for 1->3\n";
 
-  std::cout << "Number of vertices: " << graph.numVertices() << "\n";
+  std::cout << "Number of vertices: " << graph.numVertices()
+            << "\n";  //Number of vertices before clearing
+  std::cout << "Number of edges: " << graph.numEdges() 
+            << "\n";  //Number of edges before clearing
+  
+  graph.clearVertices();
+
+  std::cout << "Number of vertices: " << graph.numVertices()
+            << "\n";  //Number of vertices after clearing
+  std::cout << "Number of edges: " << graph.numVertices()
+            << "\n";  //Number of edges after clearing
 
   // ---------------- Graph 2 (unweighted) ----------------
   GraphCreationOptions opts1({GraphCreationOptions::Directed});

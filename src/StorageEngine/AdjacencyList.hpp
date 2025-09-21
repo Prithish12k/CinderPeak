@@ -155,6 +155,11 @@ public:
     return PeakStatus::OK();
   }
 
+  const PeakStatus impl_clearVertices() {
+    _adj_list.clear();
+    return PeakStatus::OK();
+  }
+
   const PeakStatus impl_updateEdge(const VertexType &src,
                                    const VertexType &dest,
                                    const EdgeType &newWeight) {

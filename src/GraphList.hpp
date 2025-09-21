@@ -67,6 +67,14 @@ public:
     return true;
   }
 
+  void clearVertices() {
+    auto resp = peak_store->clearVertices();
+    if (!resp.OK()) {
+      Exceptions::handle_exception_map(resp);
+      return;
+    }
+  }
+
   // Helper method to call clearEdges from PeakStore
   void clearEdges() {
     auto resp = peak_store->clearEdges();
